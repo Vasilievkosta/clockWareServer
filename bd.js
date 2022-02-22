@@ -1,4 +1,6 @@
-const {Sequelize} = require('sequelize')
+const {
+	Sequelize
+} = require('sequelize')
 
 module.exports = new Sequelize(
 	process.env.DB_NAME, // Название БД
@@ -9,6 +11,5 @@ module.exports = new Sequelize(
 		host: process.env.DB_HOST,
 		port: process.env.DB_PORT
 	}
-
 
 )
