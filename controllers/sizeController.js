@@ -1,24 +1,24 @@
 const {
-    Rate
+    Size
 } = require('../models/models')
 const ApiError = require('../error/ApiError')
 
 
-class RatingController {
+class SizeController {
     async create(req, res) {
         const {
             name
         } = req.body
-        const rate = await Rate.create({
+        const size = await Size.create({
             name
         })
-        return res.json(rate);
+        return res.json(size);
     }
 
     async getAll(req, res) {
-        const rates = await Rate.findAll()
-        return res.json(rates);
+        const sizes = await Size.findAll()
+        return res.json(sizes);
     }
 }
 
-module.exports = new RatingController()
+module.exports = new SizeController()

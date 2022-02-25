@@ -38,7 +38,7 @@ const Rate = sequelize.define('rate', {
 		primaryKey: true,
 		autoIncrement: true
 	},
-	rate: {
+	name: {
 		type: DataTypes.STRING,
 		allowNull: false,
 		unique: true
@@ -67,7 +67,15 @@ const Order = sequelize.define('order', {
 		primaryKey: true,
 		autoIncrement: true
 	},
-	size: {
+})
+
+const Size = sequelize.define('size', {
+	id: {
+		type: DataTypes.INTEGER,
+		primaryKey: true,
+		autoIncrement: true
+	},
+	name: {
 		type: DataTypes.STRING,
 		allowNull: false
 	},
@@ -85,10 +93,14 @@ Order.belongsTo(User)
 Master.hasMany(Order)
 Order.belongsTo(Master)
 
+Size.hasMany(Order)
+Order.belongsTo(Size)
+
 module.exports = {
 	Master,
 	City,
 	Rate,
 	User,
-	Order
+	Order,
+	Size
 }

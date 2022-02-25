@@ -8,10 +8,10 @@ class CityController {
     async create(req, res) {
         const {
             name
-        } = req.body
+        } = req.body;
         const city = await City.create({
             name
-        })
+        });
         return res.json(city);
     }
 
