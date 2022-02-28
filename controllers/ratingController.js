@@ -7,12 +7,12 @@ const ApiError = require('../error/ApiError')
 class RatingController {
     async create(req, res) {
         const {
-            name
+            rate
         } = req.body
-        const rate = await Rate.create({
-            name
+        const rateName = await Rate.create({
+            rate
         })
-        return res.json(rate);
+        return res.json(rateName);
     }
 
     async getAll(req, res) {

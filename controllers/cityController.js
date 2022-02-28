@@ -3,7 +3,6 @@ const {
 } = require('../models/models')
 const ApiError = require('../error/ApiError')
 
-
 class CityController {
     async create(req, res) {
         const {

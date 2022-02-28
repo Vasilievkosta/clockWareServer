@@ -11,11 +11,13 @@ const Master = sequelize.define('master', {
 	},
 	name: {
 		type: DataTypes.STRING,
-		allowNull: false
+		allowNull: false,
+		unique: true,
+		// defaultValue: 'masterok'
 	},
 	masterDate: {
 		type: DataTypes.DATE,
-		defaultValue: DataTypes.NOW
+		// defaultValue: DataTypes.NOW
 	},
 })
 
@@ -38,7 +40,7 @@ const Rate = sequelize.define('rate', {
 		primaryKey: true,
 		autoIncrement: true
 	},
-	name: {
+	rate: {
 		type: DataTypes.STRING,
 		allowNull: false,
 		unique: true
@@ -81,17 +83,17 @@ const Size = sequelize.define('size', {
 	},
 })
 
-City.hasMany(Master)
-Master.belongsTo(City)
+// City.hasMany(Master)
+// Master.belongsTo(City)
 
-Rate.hasMany(Master)
-Master.belongsTo(Rate)
+// Rate.hasMany(Master)
+// Master.belongsTo(Rate)
 
 User.hasMany(Order)
 Order.belongsTo(User)
 
-Master.hasMany(Order)
-Order.belongsTo(Master)
+// Master.hasMany(Order)
+// Order.belongsTo(Master)
 
 Size.hasMany(Order)
 Order.belongsTo(Size)
