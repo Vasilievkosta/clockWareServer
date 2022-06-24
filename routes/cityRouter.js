@@ -4,5 +4,6 @@ const cityController = require('../controllers/cityController');
 
 router.post('/', cityController.create)
 router.get('/', cityController.getAll)
+router.get('/:id', cityController.getOneCity)
 
 module.exports = router

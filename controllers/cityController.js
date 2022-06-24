@@ -11,12 +11,21 @@ class CityController {
         const city = await City.create({
             name
         });
-        return res.json(city);
+        res.json(city);
     }
 
     async getAll(req, res) {
         const cities = await City.findAll()
-        return res.json(cities);
+
+        res.json(cities);
+    }
+
+    async getOneCity(req, res) {
+        let id = req.params.id;
+        const cities = await City.findAll()
+        let city = cities.find(el => el.id === +id)
+
+        res.json(city);
     }
 }
 

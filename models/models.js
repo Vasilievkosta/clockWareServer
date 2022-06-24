@@ -17,7 +17,7 @@ const Master = sequelize.define('master', {
 	},
 	masterDate: {
 		type: DataTypes.DATE,
-		// defaultValue: DataTypes.NOW
+		defaultValue: DataTypes.NOW
 	},
 })
 
@@ -55,12 +55,16 @@ const User = sequelize.define('user', {
 	},
 	name: {
 		type: DataTypes.STRING,
-		allowNull: false
+		unique: true
 	},
 	email: {
 		type: DataTypes.STRING,
 		unique: true
 	},
+	// password: {
+		// type: DataTypes.STRING,
+		// unique: true
+	// },
 })
 
 const Order = sequelize.define('order', {

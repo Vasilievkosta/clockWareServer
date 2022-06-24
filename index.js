@@ -21,7 +21,7 @@ app.use(errorHandler)
 
 app.get('/', (req, res) => {
 	res.status(200).json({
-		message: 'WORKING.'
+		message: 'WORKING!!'
 	})
 })
 
@@ -29,8 +29,8 @@ app.get('/', (req, res) => {
 
 const start = async () => {
 	try {
-		await sequelize.authenticate()
-		await sequelize.sync()
+		// await sequelize.authenticate()
+		// await sequelize.sync()
 		app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
 	} catch (e) {
 		console.log(e);

@@ -5,5 +5,6 @@ const masterController = require('../controllers/masterController');
 router.post('/', masterController.create)
 router.get('/', masterController.getAll)
 router.get('/:id', masterController.getOne)
+router.delete('/:id', masterController.delete)
 
 module.exports = router
